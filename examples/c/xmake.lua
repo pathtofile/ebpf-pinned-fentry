@@ -46,42 +46,10 @@ else
         end
 end
 
-target("minimal")
+target("pinned")
     set_kind("binary")
-    add_files("minimal*.c")
+    add_files("pinned*.c")
     add_packages("linux-headers")
     if not has_config("system-libbpf") then
         add_deps("libbpf")
-    end
-
-target("bootstrap")
-    set_kind("binary")
-    add_files("bootstrap*.c")
-    add_packages("linux-headers")
-    if not has_config("system-libbpf") then
-        add_deps("libbpf")
-    end
-    if is_plat("android") then
-        add_packages("argp-standalone")
-    end
-
-target("fentry")
-    set_kind("binary")
-    add_files("fentry*.c")
-    add_packages("linux-headers")
-    if not has_config("system-libbpf") then
-        add_deps("libbpf")
-    end
-
-
-target("kprobe")
-    set_kind("binary")
-    add_files("kprobe*.c")
-    add_packages("linux-headers")
-    if not has_config("system-libbpf") then
-        add_deps("libbpf")
-    end
-    if is_plat("android") then
-        -- TODO we need fix vmlinux.h tu support android
-        set_default(false)
     end
