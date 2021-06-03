@@ -24,7 +24,7 @@ it's guide to install any required pre-requisites.
 `Fentry` was introduced in kernel 5.5, so you require at least this kernel.
 Code was written only for x64 machines, although they could be altered to work wherever eBPF works.
 
-Then just checkout this project and run `make`:
+To build, checkout this project and run `make`:
 ```bash
 git clone --recursive https://github.com/pathtofile/ebpf-pinned-fentry.git
 cd ebpf-pinned-fentry/examples/c
