@@ -73,3 +73,9 @@ Then just attempt to delete a file using `rm`:
 rm /non/existant/file
 touch test_file && rm test_file
 ```
+
+# Cleanup
+Just delete the `/sys/fs/bpf/pinned` folder:
+```bash
+sudo rm -r /sys/fs/bpf/pinned
+```
